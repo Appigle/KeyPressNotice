@@ -32,5 +32,5 @@ export default defineConfig({
     //Clears the output directory before building.
     emptyOutDir: true,
   },
-  plugins: [react(), dts()],
+  plugins: [react(), dts({ tsconfigPath: './tsconfig.app.json' })],
 });
