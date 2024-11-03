@@ -6,7 +6,7 @@
   "author": "Ray Chen",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:Appigle/KeyPressNotice.git"
   },
   "scripts": {
     "dev": "vite",
