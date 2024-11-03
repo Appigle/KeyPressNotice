@@ -1,50 +1,65 @@
-# React + TypeScript + Vite
+# React-key-press-notice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React component to display the currently pressed key on the screen in real-time.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```Bash
+npm install react-key-press-notice
+Use code with caution.
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Usage
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```JavaScript
+import KeyPressNotice from 'react-key-press-notice';
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+function App() {
+  return <KeyPressNotice />;
+}
+
+export default App;
 ```
+
+## Props
+
+| Prop Name         | Type                      | Default | Optional | Description                                                                                                     |
+| ----------------- | ------------------------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------- |
+| top               | string                    | 70%     | Yes      | Top position of the key display                                                                                 |
+| left              | string                    | 0       | Yes      | Left position of the key display                                                                                |
+| containerStyle    | React.CSSProperties       | {}      | Yes      | Custom styles for the container element                                                                         |
+| containerCls      | string                    | ""      | Yes      | Custom class names for the container element                                                                    |
+| kbdStyles         | React.CSSProperties       | {}      | Yes      | Custom styles for the key display element                                                                       |
+| kbdCls            | string                    | ""      | Yes      | Custom class names for the key display element                                                                  |
+| showTime          | number                    | 500     | Yes      | Duration (in milliseconds) to display the key                                                                   |
+| enable            | boolean                   | TRUE    | Yes      | Whether to enable the key display                                                                               |
+| customKeyEmojiMap | { [key: string]: string } | {}      | Yes      | Custom mapping of keys to emoji characters. This prop allows you to customize the emoji displayed for each key. |
+
+## Example
+
+```JavaScript
+<KeyPressNotice
+  customKeyEmojiMap={{
+    'Enter': '⏎',
+    'Backspace': '⌫',
+    'Tab': '⇥',
+    'Space': '␣',
+    'ArrowUp': '↑',
+    'ArrowDown': '↓',
+    'ArrowLeft': '←',
+    'ArrowRight': '→',
+  }}
+/>
+```
+
+## Feature
+
+To prevent sensitive information from being displayed, you can use the enable prop to conditionally enable or disable the component based on specific use cases. For example, you might want to disable the component when a password input field is focused.
+
+## License:
+
+MIT
+
+## Thanks
+
+**YuanLiu**
