@@ -2,6 +2,8 @@
 
 A simple React component to display the currently pressed key on the screen in real-time.
 
+![Key Press Gif](https://www.unpkg.com/react-key-press-notice@0.0.4/dist/KeyPressNotice.gif)
+
 ## Installation
 
 ```Bash

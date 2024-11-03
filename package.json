@@ -39,7 +39,10 @@
   "types": "dist/keypressnotice.d.ts",
   "keywords": [
     "keypressnotice",
-    "key press"
+    "key press",
+    "real-time key display",
+    "custom key display with emoji",
+    "simple react key press display component"
   ],
   "exports": {
     ".": {
